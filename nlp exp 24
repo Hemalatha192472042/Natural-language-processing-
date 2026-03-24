@@ -1,0 +1,10 @@
+s = input("Enter sentence: ")
+
+if s.endswith("?"):
+    print("Question")
+elif "thank" in s.lower():
+    print("Thanking")
+elif "hello" in s.lower() or "hi" in s.lower():
+    print("Greeting")
+else:
+    print("Statement")
