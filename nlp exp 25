@@ -1,0 +1,13 @@
+import openai
+
+openai.api_key = "YOUR_API_KEY"
+
+prompt = input("Enter prompt: ")
+
+r = openai.Completion.create(
+    model="text-davinci-003",
+    prompt=prompt,
+    max_tokens=50
+)
+
+print(r.choices[0].text)
