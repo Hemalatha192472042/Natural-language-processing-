@@ -1,0 +1,11 @@
+import nltk
+grammar = nltk.CFG.fromstring("""
+S -> NP VP
+NP -> 'I'
+VP -> 'run'
+""")
+
+parser = nltk.ChartParser(grammar)
+sentence = input("Enter: ").split()
+for tree in parser.parse(sentence):
+    print(tree)
