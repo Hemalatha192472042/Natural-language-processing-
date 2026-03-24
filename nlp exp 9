@@ -1,0 +1,10 @@
+import nltk
+
+patterns = [(r'.*ing$', 'VBG'),
+            (r'.*ed$', 'VBD'),
+            (r'.*', 'NN')]
+
+tagger = nltk.RegexpTagger(patterns)
+
+sentence = input("Enter sentence: ").split()
+print(tagger.tag(sentence))
