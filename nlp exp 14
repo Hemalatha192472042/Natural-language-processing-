@@ -1,0 +1,10 @@
+sentence = input("Enter sentence: ").split()
+
+if sentence[0] == "He" and sentence[1] != "is":
+    print("Agreement error")
+
+elif sentence[0] == "They" and sentence[1] != "are":
+    print("Agreement error")
+
+else:
+    print("Agreement OK")
