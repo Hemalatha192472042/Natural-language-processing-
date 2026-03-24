@@ -1,0 +1,12 @@
+import nltk
+
+text = input("Enter text: ")
+words = nltk.word_tokenize(text)
+tags = nltk.pos_tag(words)
+
+noun = None
+for w,t in tags:
+    if t.startswith("NN"):
+        noun = w
+    if t == "PRP":
+        print(w, "refers to", noun)
