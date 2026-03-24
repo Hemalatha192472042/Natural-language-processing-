@@ -1,0 +1,7 @@
+from nltk.wsd import lesk
+from nltk.corpus import wordnet
+
+sentence = input("Enter sentence: ").split()
+word = input("Enter ambiguous word: ")
+
+print(lesk(sentence, word))
