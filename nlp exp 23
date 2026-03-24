@@ -1,0 +1,13 @@
+import nltk
+
+text = input("Enter text: ")
+s = nltk.sent_tokenize(text)
+
+for i in range(len(s)-1):
+    w1 = set(nltk.word_tokenize(s[i].lower()))
+    w2 = set(nltk.word_tokenize(s[i+1].lower()))
+    
+    if w1 & w2:
+        print("Coherent")
+    else:
+        print("Not Coherent")
