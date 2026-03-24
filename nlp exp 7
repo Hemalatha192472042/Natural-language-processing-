@@ -1,0 +1,4 @@
+import nltk
+text = input("Enter sentence: ")
+words = nltk.word_tokenize(text)
+print(nltk.pos_tag(words))
