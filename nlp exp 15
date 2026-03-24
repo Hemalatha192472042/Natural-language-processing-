@@ -1,0 +1,15 @@
+import nltk
+from nltk import PCFG
+
+grammar = PCFG.fromstring("""
+S -> NP VP [1.0]
+NP -> 'I' [0.5] | 'You' [0.5]
+VP -> 'run' [1.0]
+""")
+
+parser = nltk.ViterbiParser(grammar)
+
+sentence = input("Enter: ").split()
+
+for tree in parser.parse(sentence):
+    print(tree)
