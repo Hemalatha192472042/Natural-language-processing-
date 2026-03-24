@@ -1,0 +1,15 @@
+import nltk
+from nltk.corpus import treebank
+from nltk.tag import DefaultTagger, UnigramTagger, BrillTaggerTrainer
+from nltk.tag.brill import brill24
+
+nltk.download('treebank')
+nltk.download('punkt')
+
+train = treebank.tagged_sents()[:500]
+
+base = UnigramTagger(train, backoff=DefaultTagger('NN'))
+trainer = BrillTaggerTrainer(base, brill24())
+tagger = trainer.train(train)
+
+print(tagger.tag(nltk.word_tokenize(input("Enter sentence: "))))
